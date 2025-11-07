@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Account Details">
+        <div class="slds-p-left_large">
+            
+            <template for:each={accountRecords} for:item="accountRecord">
+                <li key={accountRecord.Id}>Industry: {accountRecord.Industry} </li>
+                <li key={accountRecord.Id}>Name: {accountRecord.Name} </li>
+                <li key={accountRecord.Id}>Rating: {accountRecord.Rating} </li>
+                <li key={accountRecord.Id}>Phone: {accountRecord.Phone} </li>
+            </template>
+        </div>
+    </lightning-card>
+</template>
