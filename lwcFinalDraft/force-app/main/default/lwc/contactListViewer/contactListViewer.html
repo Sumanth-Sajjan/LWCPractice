@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Contact List Viewer">
+        <div class="slds-p-left_large">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>                        
+                </thead>
+                <tbody>
+                    <template for:each={contactList} for:item="contact">
+                         <tr key={contact.Id}>
+                            <td>{contact.Name}</td>
+                            <td>{contact.Email}</td>
+                            <td>{contact.Phone}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            </br>
+            <lightning-button label="Refresh Contacts" onclick={handleRefresh}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

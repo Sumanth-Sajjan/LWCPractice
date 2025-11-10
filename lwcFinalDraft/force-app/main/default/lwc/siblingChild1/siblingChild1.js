@@ -16,7 +16,6 @@ export default class SiblingChild1 extends LightningElement {
     }
 
     sendValue() {
-        // 👇 make event name lowercase here
         const position = new CustomEvent('userrole', {
             detail: { role: this.value }
         });
