@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Account High Value Checker" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+
+            <!-- Only render if record data is available -->
+            <template if:true={name}>
+                <p><strong>Account Name:</strong> {name}</p>
+                <p><strong>Annual Revenue:</strong> {annualRevenue}</p>
+
+                <!-- Conditional message -->
+                <template if:true={isHighValue}>
+                    <lightning-badge label="🏆 High Value Account!" variant="success"></lightning-badge>
+                </template>
+                <template if:false={isHighValue}>
+                    <lightning-badge label="Regular Account" variant="neutral"></lightning-badge>
+                </template>
+            </template>
+
+            <!-- Show error if something went wrong -->
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error loading account data</p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
